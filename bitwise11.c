@@ -3,20 +3,23 @@
 int main(){
 
     int num = 0;
-    int count = 0;
+    int i = 0;
+    int j = 0;
+
 
     printf("Enter a number: ");
     scanf("%d", &num);
 
-    while(num != 0){
-         if (num & 1 == 1){
-            count++;
-         }
+    printf("Enter the indexes of the bits you want to swap: ");
+    scanf("%d %d", &i, &j);
 
-    num >>= 1;
+    if((num >> i) & 1 != ((num >> j) & 1)) {
+        num = num ^ (1 << i);
+        num = num ^ (1 << j);
     }
+    
 
-    printf("Count of 1 bits = %d\n", count);
+    printf("The number with swapped bits is %d\n", num);
 
     return 0;
 
