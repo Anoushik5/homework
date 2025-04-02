@@ -11,7 +11,8 @@ int main(){
     printf("Enter a number (the index of the bit you want to change): ");
     scanf("%d", &index);
 
-    num = 1 << index | num; 
+
+    num = num & ~(1 << index); 
 
     printf("%d\n", num);
 
